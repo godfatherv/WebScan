@@ -29,17 +29,17 @@ It automates reconnaissance, vulnerability detection, and reporting with both PD
 - **CLI-based Interface** with banners & colored output
 
 ---
-## Steps to Download
-## Create & Activate a Virtual Environment
+### Steps to Download
+Create & Activate a Virtual Environment
 
-## Windows (PowerShell)
+Windows (PowerShell)
 cd path\to\WebScan
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1      # PowerShell
 # or: .\.venv\Scripts\activate.bat # CMD
 python -m pip install --upgrade pip
 
-## Linux / macOS (bash/zsh)
+Linux / macOS (bash/zsh)
 cd /path/to/WebScan
 python3 -m venv .venv
 source .venv/bin/activate
