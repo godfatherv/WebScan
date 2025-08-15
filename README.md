@@ -30,6 +30,7 @@ It automates reconnaissance, vulnerability detection, and reporting with both PD
 
 ---
 ## Steps to Download
+```
 Create & Activate a Virtual Environment
 
 Windows (PowerShell)
@@ -53,8 +54,8 @@ already inside the activated venv and at the WebScan root
 pip install -r requirements.txt
 pip install -r webscan/requirements.txt
 pip install .
-
 ```
+
 
 ## 3️⃣ Install Playwright browsers (for screenshots)
 ```bash
@@ -63,9 +64,9 @@ python -m playwright install
 playwright install
 ```
 ## verify webscan
+```
 python -c "import webscan; print('WebScan import OK')"
-
----
+```
 
 ## 🚀 Usage
 
@@ -73,7 +74,6 @@ python -c "import webscan; print('WebScan import OK')"
 webscan --url http://example.com 
 usage: webscan [-h] [--full] --url URL [--depth DEPTH] [--techstack] [--ports PORTS]
 ```
----
 
 ## 📁 Project Structure
 ```
@@ -116,6 +116,6 @@ usage: webscan [-h] [--full] --url URL [--depth DEPTH] [--techstack] [--ports PO
 ```
 
 ## 📜 License
+```
 This project is for **educational purposes only**. The author is **not responsible** for any illegal use of this tool.
-
----
+```
