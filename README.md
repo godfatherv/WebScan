@@ -29,7 +29,7 @@ It automates reconnaissance, vulnerability detection, and reporting with both PD
 - **CLI-based Interface** with banners & colored output
 
 ---
-### Steps to Download
+## Steps to Download
 Create & Activate a Virtual Environment
 
 Windows (PowerShell)
@@ -48,7 +48,7 @@ python -m pip install --upgrade pip
 
 ### 2️⃣ Install dependencies
 Run Webscan in Virtual Envoitnment (venv)
-# already inside the activated venv and at the WebScan root
+already inside the activated venv and at the WebScan root
 ```bash
 pip install -r requirements.txt
 pip install -r webscan/requirements.txt
@@ -56,7 +56,7 @@ pip install .
 
 ```
 
-### 3️⃣ Install Playwright browsers (for screenshots)
+## 3️⃣ Install Playwright browsers (for screenshots)
 ```bash
 pip install playwright
 python -m playwright install 
