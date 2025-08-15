@@ -1,6 +1,6 @@
 # WebScan
+```
 A Python-based website vulnerability scanner with PDF/JSON reports
-
 
 # 🛡️ WebScan - Website Vulnerability Scanner
 # 🤝 Author
@@ -8,10 +8,10 @@ A Python-based website vulnerability scanner with PDF/JSON reports
 
 WebScan is an advanced Python-based website vulnerability scanner designed for penetration testers, cybersecurity students, and researchers.  
 It automates reconnaissance, vulnerability detection, and reporting with both PDF and JSON outputs.  
-
----
+```
 
 ## 📌 Features
+```
 - **Reconnaissance**: Gathers information such as domain data, HTTP headers, SSL certificate info, etc.
 - **Crawler**: Crawls the target domain to discover hidden endpoints.
 - **Vulnerability Detection**:
@@ -27,8 +27,7 @@ It automates reconnaissance, vulnerability detection, and reporting with both PD
 - **Custom Payloads** for testing
 - **Multi-threaded** scanning for speed
 - **CLI-based Interface** with banners & colored output
-
----
+```
 ## Steps to Download
 ```
 Create & Activate a Virtual Environment
